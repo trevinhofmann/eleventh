@@ -1,0 +1,28 @@
+name: Pre-release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: npm ci
+      - name: Build the package
+        run: npm run build
+      - name: Prepare the release version
+        run: |
+          git config --local user.email "trevinhofmann@gmail.com"
+          git config --local user.name "Trevin Hofmann"
+          npm run release -- --prerelease
+          git push
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

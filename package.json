@@ -1,0 +1,55 @@
+{
+  "name": "eleventh",
+  "version": "1.0.0",
+  "description": "A simple JavaScript logger for writing messages to the standard output, written in TypeScript",
+  "scripts": {
+    "commit": "cz",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix",
+    "build": "tsc",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "eleventh",
+    "logger",
+    "stdout",
+    "output",
+    "logging",
+    "typescript"
+  ],
+  "bugs": "https://github.com/trevinhofmann/eleventh/issues",
+  "homepage": "https://github.com/trevinhofmann/eleventh",
+  "license": "Unlicense",
+  "author": "Trevin Hofmann <trevinhofmann@gmail.com>",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trevinhofmann/eleventh.git"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "14.14.31",
+    "@typescript-eslint/eslint-plugin": "4.15.1",
+    "@typescript-eslint/parser": "4.15.1",
+    "commitizen": "4.2.3",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.20.0",
+    "eslint-config-principled": "1.0.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.1.5",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "standard-version": "9.1.1",
+    "typescript": "4.1.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
