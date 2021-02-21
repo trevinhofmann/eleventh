@@ -1,14 +1,12 @@
-import padZeros from './padZeros';
-
 export default (): string => {
   const now = new Date();
   const year = now.getUTCFullYear();
-  const month = padZeros(now.getUTCMonth(), 2);
-  const day = padZeros(now.getUTCDate(), 2);
-  const hours = padZeros(now.getUTCHours(), 2);
-  const minutes = padZeros(now.getUTCMinutes(), 2);
-  const seconds = padZeros(now.getUTCSeconds(), 2);
-  const milliseconds = padZeros(now.getUTCMilliseconds(), 4);
+  const month = now.getUTCMonth().toString().padStart(2, '0');
+  const day = now.getUTCDate().toString().padStart(2, '0');
+  const hours = now.getUTCHours().toString().padStart(2, '0');
+  const minutes = now.getUTCMinutes().toString().padStart(2, '0');
+  const seconds = now.getUTCSeconds().toString().padStart(2, '0');
+  const milliseconds = now.getUTCMilliseconds().toString().padStart(4, '0');
   const date = `${year}-${month}-${day}`;
   const time = `${hours}:${minutes}:${seconds}:${milliseconds}`;
   return `${date}T${time}Z`;
