@@ -1,4 +1,4 @@
-name: First release
+name: First pre-release
 
 on:
   workflow_dispatch:
