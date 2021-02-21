@@ -21,7 +21,7 @@ jobs:
           git config --local user.email "trevinhofmann@gmail.com"
           git config --local user.name "Trevin Hofmann"
           npm run release -- --prerelease
-          git push
+          git push --follow-tags
       - name: Publish to npm
         run: npm publish
         env:
