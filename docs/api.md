@@ -10,18 +10,20 @@ There are 5 log levels:
 4. Error
 5. Fatal
 
+These log levels are exported by the package in the enum `LogLevel`.
+
 Every log entry has a level, and entries with a level lower than the application's specified log level will be silently dropped instead of being logged to the standard output.
 
 The first way to set an application's log level is programmatically:
 
 ```javascript
-import Logger from 'eleventh';
+import Logger, { LogLevel } from 'eleventh';
 
-Logger.setLogLevel('debug');
-// Logger.setLogLevel('info');
-// Logger.setLogLevel('warning');
-// Logger.setLogLevel('error');
-// Logger.setLogLevel('fatal');
+Logger.setLogLevel(LogLevel.debug);
+// Logger.setLogLevel(LogLevel.info);
+// Logger.setLogLevel(LogLevel.warning);
+// Logger.setLogLevel(LogLevel.error);
+// Logger.setLogLevel(LogLevel.fatal);
 ```
 
 If a log level has not been programmatically set, the logger will check for a `LOG_LEVEL` environment variable. This environment variable is not case sensitive, and valid values are `debug`, `info`, `warning`, `error`, and `fatal`. For example:

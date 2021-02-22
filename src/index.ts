@@ -27,6 +27,8 @@ const output = (logLevel: LogLevel) => (message: string): void => {
   }
 };
 
+export { LogLevel };
+
 export default {
   debug: output(LogLevel.debug),
   info: output(LogLevel.info),
