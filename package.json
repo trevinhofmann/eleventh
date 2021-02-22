@@ -1,6 +1,6 @@
 {
   "name": "eleventh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple JavaScript logger for writing messages to the standard output, written in TypeScript",
   "scripts": {
     "commit": "cz",
