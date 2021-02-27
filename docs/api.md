@@ -14,6 +14,14 @@ These log levels are exported by the package in the enum `LogLevel`.
 
 Every log entry has a level, and entries with a level lower than the application's specified log level will be silently dropped instead of being logged to the standard output.
 
+To determine the current log level, you can use `getLogLevel`:
+
+```javascript
+import Logger from 'eleventh';
+
+const logLevel = Logger.getLogLevel();
+```
+
 The first way to set an application's log level is programmatically:
 
 ```javascript

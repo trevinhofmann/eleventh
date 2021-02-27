@@ -1,4 +1,4 @@
-import LogLevel, { setLogLevel, isLogLevel, shouldLog } from './logLevel';
+import LogLevel, { getLogLevel, setLogLevel, isLogLevel, shouldLog } from './logLevel';
 import getCurrentTime from './getCurrentTime';
 import escapeNewlines from './escapeNewlines';
 
@@ -38,6 +38,7 @@ export default {
   warning: output(LogLevel.warning),
   error: output(LogLevel.error),
   fatal: output(LogLevel.fatal),
+  getLogLevel,
   setLogLevel,
   subscribe,
 };

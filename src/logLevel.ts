@@ -62,6 +62,8 @@ export const setLogLevel = (logLevel: LogLevel): void => {
   currentLogLevel = logLevel;
 };
 
+export const getLogLevel = (): LogLevel => currentLogLevel;
+
 export const shouldLog = (logLevel: LogLevel): boolean => (
   numericLogLevels[logLevel] >= numericLogLevels[currentLogLevel]
 );
