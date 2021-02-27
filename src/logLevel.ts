@@ -28,7 +28,7 @@ const nodeEnvLogLevels: NodeEnvLogLevels = {
   [NodeEnv.production]: LogLevel.warning,
 };
 
-const isLogLevel = (value: unknown): value is LogLevel => (
+export const isLogLevel = (value: unknown): value is LogLevel => (
   typeof value === 'string'
     && typeof numericLogLevels[value] === 'number'
 );

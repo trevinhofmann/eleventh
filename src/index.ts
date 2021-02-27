@@ -1,4 +1,4 @@
-import LogLevel, { setLogLevel, shouldLog } from './logLevel';
+import LogLevel, { setLogLevel, isLogLevel, shouldLog } from './logLevel';
 import getCurrentTime from './getCurrentTime';
 import escapeNewlines from './escapeNewlines';
 
@@ -27,7 +27,10 @@ const output = (logLevel: LogLevel) => (message: string): void => {
   }
 };
 
-export { LogLevel };
+export {
+  LogLevel,
+  isLogLevel,
+};
 
 export default {
   debug: output(LogLevel.debug),

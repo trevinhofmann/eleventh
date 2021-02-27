@@ -94,3 +94,14 @@ Logger.info('This message will be received by the subscription');
 // entries.
 unsubscribe();
 ```
+
+# Validating log levels
+
+The function `isLogLevel` can be used to determine whether or not a given string is a valid log level. This can be useful for validating user-defined log levels within your own application.
+
+```javascript
+import { isLogLevel } from 'eleventh';
+
+isLogLevel('critical'); // false
+isLogLevel('debug'); // true
+```
