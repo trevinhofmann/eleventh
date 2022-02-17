@@ -46,6 +46,11 @@ Logger.error('Unable to parse the JSON response from the authentication API');
 // forced to shut down, use Logger.fatal:
 Logger.fatal('Unhandled exception from the file system');
 // [2021-01-21T07:51:43:0088Z] FATAL: Unhandled exception from the file system
+
+// Optionally, a record of strings, numbers, and booleans (null and undefined
+// are also accepted) can be provided and appended to the log.
+Logger.info('Request has completed', { requestId: 'abc123', httpStatus: 200 });
+// [2021-01-21T07:51:43:0083Z] INFO: Request has completed requestId="abc123" httpStatus=200
 ```
 
 ## Versioning

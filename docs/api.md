@@ -80,6 +80,26 @@ Here is an example of a log with multiple entries:
 [2021-01-21T07:51:43:0088Z] FATAL: Unhandled exception from the file system
 ```
 
+## Additional log values
+
+It can be useful to append values to a log in addition to the message. This can easily be done with `eleventh` by supplying a record with string keys and values which are strings, numbers, or booleans (`null` and `undefined` are also accepted).
+
+Here is an example of passing some additional log values:
+
+```javascript
+import Logger from 'eleventh';
+
+Logger.info('An email has been sent', {
+  from: 'alice@gmail.com',
+  to: 'bob@gmail.com',
+  title: 'Hello, world!',
+  duration: 42,
+  success: true,
+});
+
+// [2021-01-21T07:51:43:0076Z] INFO: An email has been sent from="alice@gmail.com" to="bob@gmail.com" title="Hello, world!" duration=42 success=true
+```
+
 # Subscribing to log entries
 
 If you would like to subscribe to your application's logs directly rather than listening to the standard output, you can use the `subscribe` method:
