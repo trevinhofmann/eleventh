@@ -1,6 +1,9 @@
 import LogLevel, { getLogLevel, setLogLevel, isLogLevel, shouldLog } from './logLevel';
 import getCurrentTime from './getCurrentTime';
 import escapeNewlines from './escapeNewlines';
+import escapeReservedCharacters from './escapeReservedCharacters';
+import type { SafelyStringifiableValues } from './stringifyValues';
+import stringifyValues from './stringifyValues';
 
 type Unsubscribe = () => void;
 
@@ -17,14 +20,24 @@ const subscribe: Subscribe = (subscription) => {
   };
 };
 
-const output = (logLevel: LogLevel) => (message: string): void => {
-  const time = getCurrentTime();
-  if (shouldLog(logLevel)) {
-    const log = `[${time}] ${logLevel.toUpperCase()}: ${escapeNewlines(message)}`;
-    // eslint-disable-next-line no-console
-    console.log(log);
-    subscriptions.forEach(subscription => subscription(log));
+const output = (logLevel: LogLevel) => (
+  message: string,
+  values: SafelyStringifiableValues,
+): void => {
+  if (!shouldLog(logLevel)) {
+    return;
   }
+  const time = getCurrentTime();
+  message = escapeNewlines(message);
+  const stringifiedValues = stringifyValues(values);
+  if (stringifiedValues.length > 0) {
+    message = `${message}:${stringifiedValues}`;
+  }
+  message = escapeReservedCharacters(message);
+  const log = `[${time}] [${logLevel.toUpperCase()}] ${escapeNewlines(message)}`;
+  // eslint-disable-next-line no-console
+  console.log(log);
+  subscriptions.forEach(subscription => subscription(log));
 };
 
 export {
