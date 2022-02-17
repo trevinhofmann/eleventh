@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0-1 (2022-02-17)
+
+
+### Bug Fixes
+
+* make the additional values parameter optional ([2852261](https://github.com/trevinhofmann/eleventh/commit/2852261c232b52e69d439378c97ae4b6235fa8bc))
+
 ## 1.1.0-0 (2022-02-17)
 
 
