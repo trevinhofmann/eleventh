@@ -22,7 +22,7 @@ const subscribe: Subscribe = (subscription) => {
 
 const output = (logLevel: LogLevel) => (
   message: string,
-  values: SafelyStringifiableValues,
+  values: SafelyStringifiableValues = {},
 ): void => {
   if (!shouldLog(logLevel)) {
     return;
