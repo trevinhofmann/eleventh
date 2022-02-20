@@ -29,7 +29,7 @@ const output = (logLevel: LogLevel) => (
   }
   const time = getCurrentTime();
   message = escapeNewlines(message);
-  const stringifiedValues = escapeReservedCharacters(stringifyValues(values));
+  const stringifiedValues = stringifyValues(values);
   message = escapeReservedCharacters(message);
   if (stringifiedValues.length > 0) {
     message = `${message}:${stringifiedValues}`;
