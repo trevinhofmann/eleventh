@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0-2 (2022-02-20)
+
+
+### Bug Fixes
+
+* corrected escaping of reserved characters ([9a24b46](https://github.com/trevinhofmann/eleventh/commit/9a24b46ea2bc356c8d9a11193a6af886523201f9))
+
 ## 1.1.0-1 (2022-02-17)
 
 
