@@ -29,11 +29,11 @@ const output = (logLevel: LogLevel) => (
   }
   const time = getCurrentTime();
   message = escapeNewlines(message);
-  const stringifiedValues = stringifyValues(values);
+  const stringifiedValues = escapeReservedCharacters(stringifyValues(values));
+  message = escapeReservedCharacters(message);
   if (stringifiedValues.length > 0) {
     message = `${message}:${stringifiedValues}`;
   }
-  message = escapeReservedCharacters(message);
   const log = `[${time}] [${logLevel.toUpperCase()}] ${escapeNewlines(message)}`;
   // eslint-disable-next-line no-console
   console.log(log);
