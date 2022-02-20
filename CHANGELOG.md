@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0-3 (2022-02-20)
+
+
+### Bug Fixes
+
+* do not escape the stringified values ([c4af64d](https://github.com/trevinhofmann/eleventh/commit/c4af64d9f765e7e2c8462f5c5e89c29a73213ccc))
+
 ## 1.1.0-2 (2022-02-20)
 
 
