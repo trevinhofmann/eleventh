@@ -39,6 +39,9 @@ const isNodeEnv = (value: unknown): value is NodeEnv => (
 );
 
 const getEnvironmentLogLevel = (): LogLevel | undefined => {
+  if (typeof process !== 'object') {
+    return undefined;
+  }
   const LOG_LEVEL = process.env.LOG_LEVEL?.toLowerCase();
   if (isLogLevel(LOG_LEVEL)) {
     return LOG_LEVEL;
