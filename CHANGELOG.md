@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0-4 (2022-04-07)
+
+
+### Bug Fixes
+
+* check for process to be undefined before using it, so that the library works in browsers ([740a669](https://github.com/trevinhofmann/eleventh/commit/740a669a50e0e2e69c3711807a5f3ca0207b9228))
+
 ## 1.1.0-3 (2022-02-20)
 
 
